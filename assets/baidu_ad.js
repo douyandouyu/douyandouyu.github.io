@@ -16,26 +16,7 @@ $(function(){
 		return html;
 	}
 	
-	function getInfoStream(link){
-		$.ajax({
-			 type:"POST",
-			 url:link, 		 
-	         timeout:3000,
-			 success:function(data){
-				var list = data.list;
-				if(!!list){
-					var html='<b style="margin-right:15px;font-size:20px;">'+"网盘热门影视"+'</b>';
-					for(var i=0;i<list.length;i++){
-						html+=prepareHtml(list[i]);
-					}
-					$("#infoStreamAd").append(html);
-				}
-			 },
-			 error:function(data){
-			 	console.log("time out..");
-			 }   
-		});
-	}
+	
 	
 	function getRecommend(link){
 		$.ajax({
@@ -72,7 +53,7 @@ $(function(){
 	
 	function kuakeAd(pagesize){
 		var link="https://www.laisoyixia.com/api/cross/recommend/data?pagesize="+pagesize;
-		getInfoStream(link);
+
 	}
 	
 	function recommendContent(pagesize){
