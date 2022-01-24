@@ -1,3 +1,16 @@
+var $url = $("#film-play-url"),
+$urlMobile = $("#film-play-url-mobile"),
+isPC = IsPC();
+
+function getCurrentVideoUrl() {
+var queryUrl = getQueryVariable("url")
+if (queryUrl) {
+  isPC ? $url.val(queryUrl) :  $urlMobile.val(queryUrl)
+  return queryUrl
+} else{
+  return (isPC ? $url : $urlMobile).val();
+}
+}
 function IsPC() {
   for (
     var userAgentInfo = navigator.userAgent,
@@ -30,23 +43,14 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+function playBtnClick() {
+  otherWebsiteUrl = getCurrentVideoUrl();
+    otherWebsiteUrl = otherWebsiteUrl.replace(/\s*/g, "");
+    let playUrl = $("#link-choice").val() + otherWebsiteUrl;
+    $("#palyer-iframe").attr("src", playUrl);
+}
 
 $(function () {
-  var $url = $("#film-play-url"),
-    $urlMobile = $("#film-play-url-mobile"),
-    isPC = IsPC();
-  function getCurrentVideoUrl() {
-    var queryUrl = getQueryVariable("url")
-    if (queryUrl) {
-      // 有url参数
-      isPC ? $url.val(queryUrl) :  $urlMobile.val(queryUrl)
-      return queryUrl
-    } else{
-      return (isPC ? $url : $urlMobile).val();
-
-    }
-  }
-  
   $(document).ready(function () {
     getCurrentVideoUrl()
     var topValue = $(window).height(),
@@ -54,11 +58,9 @@ $(function () {
       topValue = 0.04 * topValue;
     $("#palyer-iframe").height(palyerIframeHeight),
       $("#play-box").css("top", topValue);
-  }),
-    $("#play-btn").on("click", function () {
-      otherWebsiteUrl = getCurrentVideoUrl();
-      otherWebsiteUrl = otherWebsiteUrl.replace(/\s*/g, "");
-      let playUrl = $("#link-choice").val() + otherWebsiteUrl;
-      $("#palyer-iframe").attr("src", playUrl);
-    });
+  })
+  if (getQueryVariable("url")) {
+    document.querySelector('#play-btn').click()
+    playBtnClick()
+  }
 });
