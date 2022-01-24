@@ -1,12 +1,3 @@
-function getWebRootPath() {
-  var protocol = window.location.protocol,
-    host = window.location.host;
-  return -1 == host.indexOf(".xyz") &&
-    -1 == host.indexOf(".top") &&
-    -1 == host.indexOf(".com")
-    ? protocol + "//" + host + "/kiwi"
-    : protocol + "//" + host;
-}
 function IsPC() {
   for (
     var userAgentInfo = navigator.userAgent,
@@ -29,4 +20,3 @@ function IsPC() {
     }
   return flag;
 }
-ROOT = getWebRootPath();
