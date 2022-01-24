@@ -39,9 +39,7 @@ $(function () {
     var queryUrl = getQueryVariable("url")
     if (queryUrl) {
       // 有url参数
-      console.log('有url',queryUrl)
       isPC ? $url.val(queryUrl) :  $urlMobile.val(queryUrl)
-      console.log($urlMobile.val(),'=======')
       return queryUrl
     } else{
       return (isPC ? $url : $urlMobile).val();
