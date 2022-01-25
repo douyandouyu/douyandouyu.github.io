@@ -1,214 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>娜娜's player</title>
-    <meta name="viewport" content="width=device-width,anicital-scale=1" />
-    <link href="./assets/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <link
-      href="./assets/jquery-confirm.min.css"
-      type="text/css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style_new.css" />
-  </head>
 
-  <body>
-    <div class="play-box" id="play-box" style="top: 28px">
-      <iframe
-        id="palyer-iframe"
-        src=""
-        allowtransparency="true"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen="true"
-        name="jx_play"
-        style="height: 490px"
-      ></iframe>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>娜娜's player</title>
+  <meta name="viewport" content="width=device-width,anicital-scale=1" />
+  <link href="./assets/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="./assets/jquery-confirm.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style_new.css" />
+</head>
 
-      <div class="operation">
-        <!-- 移动端显示 -->
-        <div class="visible-xs mobile-input">
-          <input
-            type="text"
-            value="https://v.qq.com/x/cover/mzc00200vazcfrs.html"
-            id="film-play-url-mobile"
-            class="form-control text-control"
-            aria-label="Text input with segmented button dropdown"
-            placeholder="输入视频地址"
-          />
-        </div>
+<body>
+  <div class="play-box" id="play-box" style="top: 28px">
+    <iframe id="palyer-iframe" src="" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="true"
+      name="jx_play" style="height: 490px"></iframe>
 
-        <div class="input-group">
-          <!-- PC端显示 -->
-          <input
-            type="text"
-            value="https://v.qq.com/x/cover/mzc00200vazcfrs.html"
-            id="film-play-url"
-            class="hidden-xs form-control text-control"
-            aria-label="Text input with segmented button dropdown"
-            placeholder="输入视频地址"
-          />
-
-          <div class="input-group-addon">
-            <select
-              class="input-group select-control text-control"
-              id="link-choice"
-            >
-              <option
-                value="https://vip.parwix.com:4433/player/?url="
-                selected="selected"
-              >
-                综合/B站1
-              </option>
-
-              <option value="https://jsap.attakids.com/?url=">高速接口</option>
-
-              <option value="https://z1.m1907.cn/?jx=">纯净/B站</option>
-
-              <option value="https://okjx.cc/?url=">OK解析</option>
-
-              <option
-                value="https://api.leduotv.com/wp-api/ifr.php?isDp=1&amp;vid="
-              >
-                乐多资源
-              </option>
-
-              <option value="https://vip.bljiex.com/?v=">BL</option>
-
-              <option value="https://ckmov.ccyjjd.com/ckmov/?url=">
-                ccyjjd
-              </option>
-
-              <option value="https://jx.m3u8.tv/jiexi/?url=">M3U8</option>
-
-              <option value="https://jx.mmkv.cn/tv.php?url=">七哥</option>
-
-              <option value="https://vip.laobandq.com/jiexi.php?url=">
-                老板
-              </option>
-
-              <option value="https://www.pangujiexi.cc/jiexi.php?url=">
-                盘古
-              </option>
-
-              <option value="https://api.myzch.cn/?url=">大白</option>
-
-              <option value="https://www.ckplayer.vip/jiexi/?url=">CK</option>
-
-              <option value="https://www.gai4.com/?url=">CHok</option>
-
-              <option value="https://api.iopenyun.com:88/vip/?url=">
-                云点播
-              </option>
-
-              <option value="https://jx.xmflv.com/?url=">虾米</option>
-
-              <option value="https://jx.618g.com/?url=">618G</option>
-
-              <option value="https://www.ckmov.vip/api.php?url=">ckmov</option>
-
-              <option value="https://www.miede.top/jiexi/?url=">沐白</option>
-
-              <option value="https://jx.rdhk.net/?v=">RDHK</option>
-
-              <option value="https://jx.aidouer.net/?url=">爱豆</option>
-
-              <option value="https://www.h8jx.com/jiexi.php?url=">H8</option>
-
-              <option value="https://api.jiexi.la/?url=">解析la</option>
-
-              <option value="https://jx.jiubojx.com/vip.php?url=">久播</option>
-
-              <option value="https://jx.youyitv.com/?url=">九八</option>
-
-              <option value="https://vip.laobandq.com/jiexi.php?url=">
-                老板
-              </option>
-
-              <option value="https://jxx.smys8.cn/index.php?url=">SMYS</option>
-
-              <option value="https://jiexi.janan.net/jiexi/?url=">MUTV</option>
-
-              <option value="https://jx.yingxiangbao.cn/vip.php?url=">
-                明日
-              </option>
-
-              <option value="https://okjx.cc/?url=">OK</option>
-
-              <option value="https://jx.ivito.cn/?url=">维多</option>
-
-              <option value="https://www.kpezp.cn/jlexi.php?url=">小蒋</option>
-
-              <option value="https://vip.cjys.top/?url=">星驰</option>
-
-              <option value="http://60jx.com/?url=">星空</option>
-
-              <option value="https://go.yh0523.cn/y.cy?url=">0523</option>
-
-              <option value="https://www.1717yun.com/jx/ty.php?url=">
-                17云
-              </option>
-
-              <option value="https://jx.4kdv.com/?url=,t:m">4K</option>
-
-              <option value="https://api.3jx.top/vip/?url=">66</option>
-
-              <option value="https://jx.116kan.com/?url=">116</option>
-
-              <option value="https://vip.66parse.club/?url=">200</option>
-
-              <option value="https://jx.yparse.com/index.php?url=">云析</option>
-
-              <option value="https://www.8090g.cn/?url=">8090</option>
-
-              <option value="https://api.yueliangjx.com/?url=">月亮</option>
-
-              <option value="https://123.1dior.cn/?url=">迪奥</option>
-
-              <option value="https://jx.yaohuaxuan.com/?url=">小狼</option>
-            </select>
-          </div>
-
-          <div class="input-group-btn">
-            <button
-              type="button"
-              class="btn btn-default btn-play"
-              title="点击开始解析并开始播放"
-              id="play-btn"
-              onclick="playBtnClick()"
-            >
-              解析播放
-            </button>
-          </div>
-        </div>
-
-         
+    <div class="operation">
+      <!-- 移动端显示 -->
+      <div class="visible-xs mobile-input">
+        <input type="text" value="https://v.qq.com/x/cover/mzc00200vazcfrs.html" id="film-play-url-mobile"
+          class="form-control text-control" aria-label="Text input with segmented button dropdown"
+          placeholder="输入视频地址" />
       </div>
+
+      <div class="input-group">
+        <!-- PC端显示 -->
+        <input type="text" value="https://v.qq.com/x/cover/mzc00200vazcfrs.html" id="film-play-url"
+          class="hidden-xs form-control text-control" aria-label="Text input with segmented button dropdown"
+          placeholder="输入视频地址" />
+
+        <div class="input-group-addon">
+          <select class="input-group select-control text-control" id="link-choice">
+            <option value="https://vip.parwix.com:4433/player/?url=" selected="selected">
+              综合/B站1
+            </option>
+
+            <option value="https://jsap.attakids.com/?url=">高速接口</option>
+
+            <option value="https://z1.m1907.cn/?jx=">纯净/B站(可搜索电影或电视剧名)</option>
+
+            <option value="https://okjx.cc/?url=">OK解析</option>
+
+            <option value="https://api.leduotv.com/wp-api/ifr.php?isDp=1&amp;vid=">
+              乐多资源
+            </option>
+
+            <option value="https://vip.bljiex.com/?v=">BL</option>
+
+            <option value="https://ckmov.ccyjjd.com/ckmov/?url=">
+              ccyjjd
+            </option>
+
+            <option value="https://jx.m3u8.tv/jiexi/?url=">M3U8</option>
+
+            <option value="https://jx.mmkv.cn/tv.php?url=">七哥</option>
+
+            <option value="https://vip.laobandq.com/jiexi.php?url=">
+              老板
+            </option>
+
+            <option value="https://www.pangujiexi.cc/jiexi.php?url=">
+              盘古
+            </option>
+
+            <option value="https://api.myzch.cn/?url=">大白</option>
+
+            <option value="https://www.ckplayer.vip/jiexi/?url=">CK</option>
+
+            <option value="https://www.gai4.com/?url=">CHok</option>
+
+            <option value="https://api.iopenyun.com:88/vip/?url=">
+              云点播
+            </option>
+
+            <option value="https://jx.xmflv.com/?url=">虾米</option>
+
+            <option value="https://jx.618g.com/?url=">618G</option>
+
+            <option value="https://www.ckmov.vip/api.php?url=">ckmov</option>
+
+            <option value="https://www.miede.top/jiexi/?url=">沐白</option>
+
+            <option value="https://jx.rdhk.net/?v=">RDHK</option>
+
+            <option value="https://jx.aidouer.net/?url=">爱豆</option>
+
+            <option value="https://www.h8jx.com/jiexi.php?url=">H8</option>
+
+            <option value="https://api.jiexi.la/?url=">解析la</option>
+
+            <option value="https://jx.jiubojx.com/vip.php?url=">久播</option>
+
+            <option value="https://jx.youyitv.com/?url=">九八</option>
+
+            <option value="https://vip.laobandq.com/jiexi.php?url=">
+              老板
+            </option>
+
+            <option value="https://jxx.smys8.cn/index.php?url=">SMYS</option>
+
+            <option value="https://jiexi.janan.net/jiexi/?url=">MUTV</option>
+
+            <option value="https://jx.yingxiangbao.cn/vip.php?url=">
+              明日
+            </option>
+
+            <option value="https://okjx.cc/?url=">OK</option>
+
+            <option value="https://jx.ivito.cn/?url=">维多</option>
+
+            <option value="https://www.kpezp.cn/jlexi.php?url=">小蒋</option>
+
+            <option value="https://vip.cjys.top/?url=">星驰</option>
+
+            <option value="http://60jx.com/?url=">星空</option>
+
+            <option value="https://go.yh0523.cn/y.cy?url=">0523</option>
+
+            <option value="https://www.1717yun.com/jx/ty.php?url=">
+              17云
+            </option>
+
+            <option value="https://jx.4kdv.com/?url=,t:m">4K</option>
+
+            <option value="https://api.3jx.top/vip/?url=">66</option>
+
+            <option value="https://jx.116kan.com/?url=">116</option>
+
+            <option value="https://vip.66parse.club/?url=">200</option>
+
+            <option value="https://jx.yparse.com/index.php?url=">云析</option>
+
+            <option value="https://www.8090g.cn/?url=">8090</option>
+
+            <option value="https://api.yueliangjx.com/?url=">月亮</option>
+
+            <option value="https://123.1dior.cn/?url=">迪奥</option>
+
+            <option value="https://jx.yaohuaxuan.com/?url=">小狼</option>
+          </select>
+        </div>
+
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default btn-play" title="点击开始解析并开始播放" id="play-btn"
+            onclick="playBtnClick()">
+            解析播放
+          </button>
+        </div>
+      </div>
+       <div class="player-url-tips">
+        <div>该网页使用iframe（<a href="https://www.w3school.com.cn/html/html_iframe.asp" rel="noreferrer nofollow"
+            target="_blank">什么是iframe？</a>）嵌套网页播放，嵌套网页链接如下：</div>
+        <div><b>当前播放网页链接：</b><a id="current-play-url"
+            href="https://vip.parwix.com:4433/player/?url=https://v.qq.com/x/cover/mzc00200vazcfrs.html"
+            rel="noreferrer nofollow"
+            target="_blank">https://vip.parwix.com:4433/player/?url=https://v.qq.com/x/cover/mzc00200vazcfrs.html</a>，（如有侵权请联系该链接站长处理,感谢配合！）
+        </div>
+        <div><b>注</b>：本站提供的播放接口均收集自网络，<b>本站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传。</b>本站只能用于学习交流，切勿用于商业用途，否则后果自负！</div>
+        <div><b>主流视频播放平台：</b>
+          <a href="https://www.iqiyi.com/" rel="noreferrer nofollow" target="_blank">爱奇艺</a><a>、
+          </a><a href="https://v.qq.com/" rel="noreferrer nofollow" target="_blank">腾讯视频</a><a>、
+          </a><a href="https://www.youku.com/" rel="noreferrer nofollow" target="_blank">优酷</a><a>、
+          </a><a href="https://www.mgtv.com/" rel="noreferrer nofollow" target="_blank">芒果TV</a><a>、
+          </a><a href="http://www.le.com/" rel="noreferrer nofollow" target="_blank">乐视</a><a>、
+          </a><a href="https://www.bilibili.com/" rel="noreferrer nofollow" target="_blank">bilibili</a><a>、
+          </a><a href="https://www.acfun.cn/" rel="noreferrer nofollow" target="_blank">acfun</a><a>、
+          </a><a href="https://www.youtube.com/" rel="noreferrer nofollow" target="_blank">youtube</a><a>等等
+          </a>
+        </div>
+      </div><a>
     </div>
-    <a>
-      <script
-        src="./assets/jquery.min.js"
-        type="application/javascript"
-      ></script>
-      <script
-        src="./assets/bootstrap.min.js"
-        type="application/javascript"
-      ></script>
-      <script
-        src="./assets/jquery.qrcode.min.js"
-        type="application/javascript"
-      ></script>
-      <script
-        src="./assets/jquery-confirm.min.js"
-        type="application/javascript"
-      ></script>
-      <script
-        src="./assets/jquery.cookie.min.js"
-        type="application/javascript"
-      ></script>
-      <script src="./assets/vip_analysis.js"></script>
-      <script src="./assets/left_qrcode.js"></script>
-    </a>
-  </body>
+  </div>
+  <a>
+    <script src="./assets/jquery.min.js" type="application/javascript"></script>
+    <script src="./assets/bootstrap.min.js" type="application/javascript"></script>
+    <script src="./assets/jquery.qrcode.min.js" type="application/javascript"></script>
+    <script src="./assets/jquery-confirm.min.js" type="application/javascript"></script>
+    <script src="./assets/jquery.cookie.min.js" type="application/javascript"></script>
+    <script src="./assets/vip_analysis.js"></script>
+    <script src="./assets/left_qrcode.js"></script>
+  </a>
+</body>
+
 </html>
