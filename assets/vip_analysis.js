@@ -48,6 +48,8 @@ function playBtnClick() {
     otherWebsiteUrl = otherWebsiteUrl.replace(/\s*/g, "");
     let playUrl = $("#link-choice").val() + otherWebsiteUrl;
     $("#palyer-iframe").attr("src", playUrl);
+    $("#current-play-url").text(playUrl);
+    $("#current-play-url").attr("href",playUrl)
 }
 
 $(function () {
