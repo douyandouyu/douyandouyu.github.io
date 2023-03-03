@@ -6,8 +6,12 @@ const initUrl = "https://v.qq.com/x/cover/mzc00200vazcfrs.html";
 let otherWebsiteUrl = "";
 
 function getCurrentVideoUrl() {
+  var inputValue = (isPC ? $url : $urlMobile).val();
+  if (inputValue) {
+    return inputValue;
+  }
+  
   var queryUrl = getQueryVariable("url");
-  // 如果地址栏有参数并且输入框的地址和url的地址一样
   if (queryUrl) {
     (isPC ? $url : $urlMobile).val(queryUrl);
     return queryUrl;
@@ -17,6 +21,7 @@ function getCurrentVideoUrl() {
     return (isPC ? $url : $urlMobile).val();
   }
 }
+
 function IsPC() {
   for (
     var userAgentInfo = navigator.userAgent,
