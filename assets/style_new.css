@@ -961,3 +961,9 @@ body {
     transform: scale(1);
   }
 }
+.tips{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}

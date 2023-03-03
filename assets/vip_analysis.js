@@ -1,7 +1,7 @@
 var $url = $("#film-play-url"),
   $urlMobile = $("#film-play-url-mobile"),
   isPC = IsPC();
-const initUrl = "https://v.qq.com/x/cover/mzc00200vazcfrs.html";
+const initUrl = "";
 
 let otherWebsiteUrl = "";
 
